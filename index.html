@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tiwi's Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <!-- Navbar -->
+         <header class="header">
+            <a href= "#hero" class="logo"><span class="logo-color">Simply</span>.Divine</a>
+            <nav class="navbar">
+                <a href="#hero" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="pages/myWork.html">My Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero section -->
+         <section class="hero" id="hero">
+            <div class="intro-text">
+                <h3>Hi! Welcome to my site!</h3>
+                <h1>
+                    I'm Tiwi Lanre-Adisa,<br>
+                    an aspiring<span class="highlight"> Web Developer</span> & 
+                    <span class="highlight"> UX/UI Designer</span>
+                </h1>
+                
+                <div class="buttons">
+                    <a href="pages/myWork.html" class="button">See My Work</a>
+                </div>
+            </div>
+            <div class="personal-photo-container">
+                <img src="assets/pfp2.png" alt="Profile Picture" class="personal-photo">
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section class="about" id="about">
+        <!--<div class="about-photo">
+                <img src="../assets/pfp2.png" alt="Profile Picture">
+            </div>
+        -->
+
+            <div class="about-text">
+                <h2>About <span class="me-highlight">Me</span></h2>
+
+                <p>
+                    I’m a 4th-year Computer Science student at Wilfrid Laurier University, <br/> focusing on <span class="text-highlight">Web Development and UX/UI design</span>. Passionate about creating 
+                    <br/>intuitive websites and user-friendly interfaces, I combine my technical skills with a strong eye 
+                    <br/>for design. I’m eager to expand my expertise in front-end development and UX/UI 
+                    <br/>design while gaining real-world experience in collaborative projects.
+                </p>
+
+                <ul>
+                    <li>
+                        <img src="./assets/code-icon.png">
+                        <h3>Languages</h3>
+                        <p>HTML, CSS, JavaScript, Python, Java, C/C++/C#, SQL</p>
+                    </li>
+
+                    <li>
+                        <img src="./assets/school-icon.png">
+                        <h3>Education</h3>
+                        <p>BSc in Computer Science with Minor in User Experience Design, Wilfrid Laurier University </p>
+                    </li>
+
+                    <li>
+                        <img src="./assets/tools-icon.png">
+                        <h3>Tools</h3>
+                        <p>Figma, SQL Developer, Eclipse, Canva, Github, VSCode</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- My Services Section -->
+         <section class="services">
+            <h2>My Services</h2>
+            <div class="services-container">
+                <ul>
+                    <li>
+                        <img src="assets/crop.png" alt="UX/UI Design Icon">
+                        <h3>UX/UI Design</h3>
+                        <p>I craft intuitive and user-centered digital experiences that prioritize both functionality and aesthetics. 
+                            From wireframes to interactive prototypes,I ensure every design choice enhances usability and delivers a seamless experience.</p>
+                    </li>
+                    <li>
+                        <img src="assets/web.png" alt="UX/UI Design Icon">
+                        <h3>Web Dev</h3>
+                        <p>I build responsive, modern websites using HTML, CSS, JavaScript,
+                             and frameworks tailored to your project. Whether it's a personal site or a 
+                             full-featured platform, I deliver clean, efficient code and visually compelling interfaces.</p>
+                    </li>
+                    <li>
+                        <img src="assets/graphic.png" alt="UX/UI Design Icon">
+                        <h3>Graphic Design</h3>
+                        <p>From social media content to branding and promotional materials, 
+                            I create visually engaging graphics that communicate clearly and 
+                            align with your brand’s identity. My work ensures every design element serves a purpose.</p>
+                    </li>
+                    <li>
+                        <img src="assets/video.png" alt="UX/UI Design Icon">
+                        <h3>Video Editing</h3>
+                        <p>I bring stories to life through clean, compelling video edits. From promotional clips 
+                            to social media content, I focus on pacing, visuals, and sound to create engaging videos 
+                            that leave a lasting impression and communicate your message with clarity and creativity.</p>
+                    </li>
+                </ul>
+            </div>
+            <button>
+                <a href="pages/myWork.html" class="button">See My Portfolio</a>
+            </button>
+
+        </section>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Contact <span>Me</span></h2>
+            <p>
+                I’m currently looking for new opportunities and projects to work on.<br/>
+                If you are interested in collaborating or hiring me, feel free to reach out!
+            </p>
+
+            <form action="#">
+
+                <div class="input-box">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email"placeholder="Email Address">
+                </div>
+
+                <textarea name="" id="" cols="30" rows= "10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="button">
+            </form>
+        </section>
+
+        <footer class="footer">
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/tiwi-lanre-adisa-4b0b1a1b7/"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div> 
+
+            <p>&copy; 2025 Tiwi Lanre-Adisa. All rights reserved.</p>
+            <p>Designed by Tiwi Lanre-Adisa</p>
+        </footer>
+    </body>
+</html>

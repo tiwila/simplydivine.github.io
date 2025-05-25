@@ -1,0 +1,732 @@
+/* Base colors */
+
+:root {
+    --primary-color: #4A0E4E; /*deep purple:  #4A0E4E*/
+    --secondary-color: #DCD0FF; /*pale lavender: #DCD0FF*/
+    --background-color: #EBEFF2; /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
+    --tertiary-color: #0C1419; /*dark grey: #0C1419*/
+    --text-color: black;
+    --hover-color: #FFF5E1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: var(--primary-color); /*deep purple:  #4A0E4E*/
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--secondary-color); /*pale lavender: #DCD0FF*/
+    text-shadow: 0 0 25px var(--secondary-color), 
+                 0 0 50px var(--secondary-color);
+    transform: scale(1.1);
+}
+span{
+    color: var(--secondary-color);
+}
+
+.navbar a {
+    font-size: 15px;
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover{
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center content when wrapped */
+}
+
+.intro-text{
+    max-width: 800px;
+    text-align: center; /* Center text for smaller screens */
+}
+
+.intro-text h3 {
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 3.0;
+}
+
+.intro-text h1 {
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 1.5;
+    margin: 25px 0 30px;
+    color: black;
+}
+
+.intro-text .highlight{
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    font-weight: 800;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex; /* Arrange buttons side-by-side */
+    justify-content: center; /* Center buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+.button {
+    padding: 15px 20px;
+    background-color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    color: whitesmoke;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color:white; 
+    border: 2px solid var(--primary-color); /*deep purple:  #4A0E4E*/
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    transform: scale(1.1);
+}
+
+.personal-photo-container{
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px; /* Ensures image container has a minimum width */
+}
+
+.personal-photo {
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background: var(--primary-color);
+    padding: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.personal-photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Rounds the corners of the image itself */
+    object-fit: cover; /* Ensures the image fits within the circular frame */
+}
+
+/*About Section*/
+
+.about{
+    display: flex;
+    padding: 12% 8%;
+    gap: 10em;
+    background: #0C1419;
+    justify-content: center;
+    align-items: center; /* Center the content vertically and horizontally */
+    flex-wrap: wrap; /* Allows items to wrap for smaller screens */
+    text-align: center; /* Center text content in about section */
+}
+
+.about-photo img{
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 0 0 25px var(--secondary-color),
+                 0 0 25px var(--primary-color);
+    border-radius: 50%;
+    max-width: 90%; /* Ensures image scales down */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.about-text h2{
+    text-align: center; /* Center heading for better mobile view */
+    font-size: 42px;
+    color: whitesmoke;
+}
+
+.about-text h3{
+    font-size: 30px;
+    color: var(--tertiary-color);
+    margin: 1em 0;
+}
+
+.about-text ul p{
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--tertiary-color);
+    font-weight: 500;
+    margin: 1em 0;
+}
+
+.about-text ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    margin: 0;
+    flex-wrap: wrap; /* Allow list items to wrap */
+}  
+
+.about-text ul img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.about-text li{
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    width: 300px;
+    max-width: 100%; /* Ensures list item doesn't overflow */
+}
+.about-text li:hover{
+    box-shadow: var(--secondary-color) 0px 0px 20px;
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+.about-text p{
+    font-size: 20px;
+    margin: 2em 0 3em;
+    color: whitesmoke;
+}
+
+.about-text .me-highlight{
+    color: var(--secondary-color); 
+    font-weight: 800;
+}
+
+.about-text .text-highlight{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* services section */
+
+.services{
+    padding: 12% 8%;
+    gap: 10em;
+    background: var(--background-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
+    justify-content: center;
+    align-items: center; /* Center the content vertically and horizontally */
+}
+
+.services h2{
+    text-align: center;
+    font-size: 42px;
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+}
+
+.services h3{
+    font-size: 25px;
+    color: var(--tertiary-color);
+    margin: 1em 0;
+}
+
+.services ul p{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: black;
+    margin: 1em 0;
+}
+
+.services ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    list-style: none;
+    margin: 0;
+    flex-wrap: wrap; /* Allow list items to wrap */
+}  
+
+.services ul img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.services li{
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px grey;
+    border: 1px solid var(--primary-color); 
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    width: 300px;
+    max-width: 100%; /* Ensures list item doesn't overflow */
+}
+.services li:hover{
+    box-shadow: var(--secondary-color) 0px 0px 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+.services button{
+    padding: 10px 20px;
+    color: whitesmoke;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 0px auto;
+    display: block;
+}
+.contact{
+    background-color: var(--tertiary-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
+    padding: 12% 8%; /* Add padding for better spacing */
+}
+
+/*contact section*/
+.contact h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 1em;
+    color: whitesmoke;
+}
+
+.contact span{
+    color: var(--secondary-color); /*deep purple:  #4A0E4E*/
+    font-weight: 800;
+}
+
+.contact p{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 2em;
+    line-height: 1.5;
+    font-weight: 400;
+    color: whitesmoke
+}
+
+.contact form{
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+    padding: 0 15px; /* Add some horizontal padding to the form */
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5em;
+    margin: 1em 0;
+    border-radius: .8rem;
+    font-size: 15px;
+    color: var(--tertiary-color);
+    background: white;
+    resize: none;
+}
+
+/* Work Container */
+.work-heading {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 15px; /* Add padding to the heading */
+}
+.work-heading h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4A0E4E;
+}
+
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+/* Work Blocks */
+.work {
+    aspect-ratio: 1 / 1; /* Makes the block a square */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #EBEFF2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: #4A0E4E;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Hover Effect */
+.work:hover {
+    background-color: var(--secondary-color); /* Hover color */
+    color: #fff;
+}
+
+/* Work Icon */
+.work-icon {
+    width: 60px; /* Larger icon size */
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Work Text */
+.work-content p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer{
+    background: var(--primary-color); /*deep purple:  #4A0E4E*/
+    color: whitesmoke;
+    padding: 2em 0;
+    text-align: center;
+}
+.footer p{
+    font-size: 15px;
+    margin: 0;
+}
+
+/* --- Media Queries --- */
+
+/* For screens smaller than 1200px (e.g., smaller desktops, large tablets) */
+@media (max-width: 1200px) {
+    .header {
+        padding: 20px 5%; /* Adjust padding for header */
+    }
+
+    .hero {
+        padding: 100px 5% 50px; /* Adjust padding for hero section */
+        gap: 4em;
+    }
+
+    .intro-text h1 {
+        font-size: 45px;
+    }
+
+    .personal-photo {
+        width: 400px;
+        height: 450px;
+    }
+
+    .about {
+        padding: 8% 5%;
+        gap: 5em;
+    }
+
+    .about-photo img {
+        width: 400px;
+        height: 450px;
+    }
+
+    .about-text h2 {
+        font-size: 38px;
+    }
+
+    .about-text p {
+        font-size: 18px;
+    }
+
+    .services {
+        padding: 8% 5%;
+    }
+
+    .work-container {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* For screens smaller than 992px (e.g., tablets) */
+@media (max-width: 992px) {
+    .header {
+        padding: 20px 3%; /* Further reduce padding */
+    }
+
+    .navbar a {
+        margin: 0 10px; /* Reduce space between nav items */
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center align text */
+        padding: 80px 5% 30px;
+        gap: 2em;
+    }
+
+    .intro-text {
+        max-width: 100%; /* Allow intro text to take full width */
+    }
+
+    .intro-text h1 {
+        font-size: 40px;
+    }
+
+    .intro-text h3 {
+        font-size: 25px;
+    }
+
+    .personal-photo-container {
+        order: -1; /* Move image above text on smaller screens */
+    }
+
+    .personal-photo {
+        width: 350px;
+        height: 400px;
+        max-width: 90%; /* Ensure image scales down */
+        height: auto;
+    }
+
+    .about {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 5% 3%;
+        gap: 3em;
+    }
+
+    .about-photo img {
+        width: 350px;
+        height: 400px;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .about-text h2 {
+        font-size: 36px;
+    }
+
+    .about-text ul {
+        flex-direction: column; /* Stack skill items vertically */
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .about-text li {
+        width: 100%; /* Allow list items to take full width */
+    }
+
+    .services ul {
+        flex-direction: column; /* Stack service items vertically */
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .services li {
+        width: 100%; /* Allow list items to take full width */
+    }
+
+    .work-container {
+        grid-template-columns: 1fr; /* Single column layout for work blocks */
+        gap: 1rem;
+        padding: 0 15px;
+    }
+
+    .contact form {
+        padding: 0 10px;
+    }
+}
+
+/* For screens smaller than 768px (e.g., most mobile devices) */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 3%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        margin: 0 8px;
+    }
+
+    .hero {
+        padding: 60px 3% 20px;
+    }
+
+    .intro-text h1 {
+        font-size: 35px;
+    }
+
+    .intro-text h3 {
+        font-size: 22px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .button {
+        width: 80%; /* Make buttons take more width */
+        margin: 0 auto; /* Center buttons */
+    }
+
+    .personal-photo {
+        width: 300px;
+        height: 350px;
+    }
+
+    .about {
+        padding: 5% 2%;
+    }
+
+    .about-photo img {
+        width: 300px;
+        height: 350px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 5% 2%;
+    }
+
+    .services h2 {
+        font-size: 32px;
+    }
+
+    .contact h2 {
+        font-size: 30px;
+    }
+
+    .contact p {
+        font-size: 18px;
+    }
+
+    .work-heading h1 {
+        font-size: 2rem;
+    }
+
+    .work-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* For screens smaller than 480px (e.g., smaller mobile devices) */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 2%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar {
+        display: none; /* Hide navbar on very small screens, consider a hamburger menu */
+    }
+
+    .hero {
+        padding: 40px 2% 10px;
+    }
+
+    .intro-text h1 {
+        font-size: 28px;
+    }
+
+    .intro-text h3 {
+        font-size: 20px;
+    }
+
+    .personal-photo {
+        width: 250px;
+        height: 300px;
+    }
+
+    .about-photo img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    .services h2 {
+        font-size: 28px;
+    }
+
+    .contact h2 {
+        font-size: 26px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    .work-heading h1 {
+        font-size: 1.8rem;
+    }
+}
