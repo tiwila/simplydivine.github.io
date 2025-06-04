@@ -337,6 +337,12 @@ span{
     margin-bottom: 1em;
     color: whitesmoke;
 }
+.contact img{
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto 1em; /* Center the icon and add space below */
+}
 
 .contact span{
     color: var(--secondary-color); /*deep purple:  #4A0E4E*/
@@ -449,6 +455,67 @@ span{
 .footer p{
     font-size: 15px;
     margin: 0;
+}
+
+/*---UX page---*/
+.ux-text h1{
+    font-size: 50px;
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2rem
+}
+
+.ux-text p{
+    font-size: 15px;
+    color: var(--tertiary-color); /*dark grey: #0C1419*/
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 20px; /* Add horizontal padding for better readability */
+    line-height: 1.6;
+}
+
+.ux-text h3{
+    font-size: 25px;
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.ux-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 1rem 2rem; /* Add padding to the list */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+.ux-list-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid var(--secondary-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 400px; /* Ensures all items have a minimum height */
+
+}
+
+.ux-list-item img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.ux-list-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 1px 15px var(--primary-color);
 }
 
 /* --- Media Queries --- */
