@@ -9,14 +9,24 @@
     --hover-color: #FFF5E1;
 }
 
-*{
+/* Universal box-sizing and font */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
     font-family: "Raleway", sans-serif;
     text-decoration: none;
     list-style: none;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Adjust padding-top to ensure content starts below the fixed header */
+    padding-top: 5rem; /* Approximate height of header */
 }
 
 .header {
@@ -24,27 +34,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 35px 12%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     background: var(--primary-color); /*deep purple:  #4A0E4E*/
     backdrop-filter: blur(10px);
-    z-index: 100;
 }
 
 .logo {
     color: whitesmoke;
-    font-size: 24px;
+    font-size: 1.8rem;
     font-weight: bold;
     transition: 0.3s ease;
 }
 
 .logo:hover {
     color: var(--secondary-color); /*pale lavender: #DCD0FF*/
-    text-shadow: 0 0 25px var(--secondary-color), 
-                 0 0 50px var(--secondary-color);
+    text-shadow: 0 0 15px var(--secondary-color);
     transform: scale(1.1);
 }
 span{
@@ -55,8 +63,8 @@ span{
     font-size: 15px;
     color: whitesmoke;
     font-weight: bold;
-    margin: 0 20px;
-    border-bottom: 3px solid transparent;
+    margin-left: 1.5rem;
+    border-bottom: 2px solid transparent;
     transition: 0.3s ease;
 }
 
@@ -300,7 +308,7 @@ span{
     border: 1px solid var(--primary-color); 
     margin: 20px auto;
     border-radius: 15px;
-    background-color: whitesmoke;
+    background-color: white;
     width: 300px;
     max-width: 100%; /* Ensures list item doesn't overflow */
 }
@@ -384,77 +392,102 @@ span{
     resize: none;
 }
 
-/* Work Container */
+/* My Work Section */
+.work-section {
+    flex-grow: 1; /* Allows this section to take available space */
+    padding: 3rem 1rem; /* Padding top/bottom and sides */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
 .work-heading {
     text-align: center;
-    margin-top: 2rem;
-    padding: 0 15px; /* Add padding to the heading */
+    margin-bottom: 2.5rem; /* Space below heading */
+    padding: 0 1rem;
 }
+
 .work-heading h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #4A0E4E;
+    font-size: 3.5rem; /* Prominent heading */
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.work-heading p {
+    font-size: 1.15rem;
+    color: var(--tertiary-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .work-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
-    padding: 0 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for work items */
+    gap: 1.5rem; /* Space between blocks */
+    max-width: 1000px; /* Max width of the grid container */
+    width: 100%;
+    padding: 0 1rem; /* Inner padding for the grid */
 }
 
-/* Work Blocks */
-.work {
-    aspect-ratio: 1 / 1; /* Makes the block a square */
+/* Work Item Blocks */
+.work-item {
+    background-color: #ffffff; /* White background for items */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 1.5rem; /* Inner padding */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 1rem;
-    border-radius: 15px;
-    text-decoration: none;
-    color: #EBEFF2;
-    font-weight: bold;
-    font-size: 1.2rem;
-    background: #4A0E4E;
-    transition: background-color 0.3s, color 0.3s;
-    box-sizing: border-box;
+    color: var(--tertiary-color); /* Default text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--secondary-color); /* Subtle border */
 }
 
-/* Hover Effect */
-.work:hover {
-    background-color: var(--secondary-color); /* Hover color */
-    color: #fff;
+.work-item:hover {
+    transform: translateY(-0.5rem); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background-color: var(--hover-color); /* Hover background color */
 }
 
-/* Work Icon */
 .work-icon {
-    width: 60px; /* Larger icon size */
-    height: 60px;
+    width: 3.5rem; /* Icon size */
+    height: 3.5rem;
     object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 50%; /* Circular icon */
+    background-color: var(--primary-color); /* Primary color background for icon circle */
+    padding: 0.5rem; /* Padding inside icon circle */
+    border: 2px solid var(--secondary-color); /* Border around icon */
 }
 
-/* Work Text */
-.work-content p {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+.work-text h2 {
+    font-size: 1.6rem; /* Title size */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* Title color */
 }
 
-.footer{
-    background: var(--primary-color); /*deep purple:  #4A0E4E*/
+.work-text p {
+    font-size: 0.95rem; /* Description size */
+    line-height: 1.5;
+    color: var(--tertiary-color); /* Description color */
+}
+
+.footer {
+    background: var(--primary-color);
     color: whitesmoke;
-    padding: 2em 0;
+    padding: 1.5em 0; /* Adjust padding */
     text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+    font-size: 0.9rem;
 }
-.footer p{
-    font-size: 15px;
-    margin: 0;
+.footer p:last-child {
+    font-size: 0.75rem; /* Smaller font for "Designed by" */
+    opacity: 0.8; /* Slight transparency */
 }
 
 /*---UX page---*/
@@ -518,53 +551,91 @@ span{
     box-shadow: 0 1px 15px var(--primary-color);
 }
 
+.work-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+.work-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+}
+.work-section p {
+    font-size: 1.1rem;
+    color: var(--tertiary-color); /*dark grey: #0C1419*/
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Media Queries --- */
 
 /* For screens smaller than 1200px (e.g., smaller desktops, large tablets) */
 @media (max-width: 1200px) {
     .header {
-        padding: 20px 5%; /* Adjust padding for header */
+        padding: 1rem 5%; /* Adjust padding for header */
+    }
+
+    body {
+        padding-top: 5.5rem; /* Ensure enough space for header */
+    }
+
+    .logo {
+        font-size: 1.6rem; /* Slightly smaller logo */
+    }
+
+    .navbar a {
+        font-size: 14px; /* Slightly smaller nav items */
+        margin-left: 1.2rem; /* Reduce space between nav items */
     }
 
     .hero {
-        padding: 100px 5% 50px; /* Adjust padding for hero section */
-        gap: 4em;
-    }
-
-    .intro-text h1 {
-        font-size: 45px;
-    }
-
-    .personal-photo {
-        width: 400px;
-        height: 450px;
+        margin-top: -5.5rem;
+        padding-top: calc(30px + 5.5rem);
     }
 
     .about {
-        padding: 8% 5%;
-        gap: 5em;
+        margin-top: -5.5rem;
+        padding-top: calc(12% + 5.5rem);
     }
 
-    .about-photo img {
-        width: 400px;
-        height: 450px;
-    }
-
-    .about-text h2 {
-        font-size: 38px;
-    }
-
-    .about-text p {
-        font-size: 18px;
-    }
 
     .services {
         padding: 8% 5%;
     }
 
+    .work-heading h1 {
+        font-size: 2.8rem;
+    }
     .work-container {
-        gap: 1.5rem;
-        padding: 0 1rem;
+        gap: 1.25rem; /* Adjusted for this breakpoint */
+        max-width: 45rem; /* Adjusted for this breakpoint */
+    }
+    .work-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    .work-text h2 {
+        font-size: 1.4rem;
     }
 }
 
@@ -647,9 +718,20 @@ span{
     }
 
     .work-container {
-        grid-template-columns: 1fr; /* Single column layout for work blocks */
-        gap: 1rem;
-        padding: 0 15px;
+        grid-template-columns: 1fr; /* Single column layout for tablets */
+        gap: 1rem; /* Further reduced gap */
+        max-width: 25rem; /* Constrain single column width */
+        padding: 0 1.5rem; /* Adjust padding for single column */
+    }
+    .work-heading h1 {
+        font-size: 2.5rem;
+    }
+    .work-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    .work-text h2 {
+        font-size: 1.3rem;
     }
 
     .contact form {
@@ -660,16 +742,20 @@ span{
 /* For screens smaller than 768px (e.g., most mobile devices) */
 @media (max-width: 768px) {
     .header {
-        padding: 15px 3%;
+        padding: 0.8rem 3%;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 1.5rem;
+    }
+
+     body {
+        padding-top: 4rem; /* Adjust for smaller header */
     }
 
     .navbar a {
-        font-size: 13px;
-        margin: 0 8px;
+        font-size: 0.9rem;
+        margin-left: 1rem;
     }
 
     .hero {
@@ -732,23 +818,46 @@ span{
         font-size: 18px;
     }
 
-    .work-heading h1 {
-        font-size: 2rem;
+    .work-section {
+        padding: 2rem 0.5rem;
     }
-
-    .work-content p {
-        font-size: 1.2rem;
+    .work-heading h1 {
+        font-size: 2.5rem;
+    }
+    .work-heading p {
+        font-size: 1rem;
+    }
+    .work-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        max-width: 350px; /* Constrain single column width */
+    }
+    .work-item {
+        padding: 1rem;
+    }
+    .work-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    .work-text h2 {
+        font-size: 1.4rem;
+    }
+    .work-text p {
+        font-size: 0.85rem;
     }
 }
 
 /* For screens smaller than 480px (e.g., smaller mobile devices) */
 @media (max-width: 480px) {
     .header {
-        padding: 10px 2%;
+        padding: 0.5rem 2%;
     }
 
     .logo {
-        font-size: 18px;
+        font-size: 1.2rem;
+    }
+
+    body {
+        padding-top: 3rem;
     }
 
     .navbar {
@@ -792,8 +901,23 @@ span{
     .contact p {
         font-size: 16px;
     }
-
     .work-heading h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+    .work-heading p {
+        font-size: 0.9rem;
+    }
+    .work-item {
+        padding: 0.8rem;
+    }
+    .work-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .work-text h2 {
+        font-size: 1.2rem;
+    }
+    .work-text p {
+        font-size: 0.8rem;
     }
 }
