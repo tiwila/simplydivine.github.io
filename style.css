@@ -416,6 +416,9 @@ span{
     background-color: var(--tertiary-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
     padding: 12% 0; /* Add padding for better spacing */
     width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 /*contact section*/
