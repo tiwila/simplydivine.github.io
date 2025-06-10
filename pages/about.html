@@ -8,19 +8,91 @@
         <link rel="stylesheet" href="../style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <!-- Navbar -->
          <header class="header">
-            <a href= "../index" class="logo"><span class="logo-color">Simply</span>.Divine</a>
+            <a href= "#" class="logo"><span class="logo-color">Simply</span>.Divine</a>
 
-            <nav class="navbar">
-                <a href="../#home">Home</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="navbar" id="navbar">
+                <a href="/index.html">Home</a>
                 <a href="#about">About</a>
-                <a href="../#myWork">My Work</a>
+                <a href="/pages/myWork.html">My Work</a>
                 <a href="../#contact">Contact</a>
             </nav>
         </header>
+
+        <!-- About section -->
+        <section class="about" id="about">
+            <div class="about-photo">
+                <img src="../assets/profile-pic.jpeg" alt="Profile Picture">
+            </div>
+    
+            <div class="about-text">
+                <h2>About <span class="me-highlight">Me</span></h2>
+
+                <p>
+                    I’m a 4th-year Computer Science student at Wilfrid Laurier University, focusing on <span class="text-highlight">Web Development and UX/UI design</span>. Passionate about creating 
+                    intuitive websites and user-friendly interfaces, I combine my technical skills with a strong eye 
+                    for design. I’m eager to expand my expertise in front-end development and UX/UI 
+                    design while gaining real-world experience in collaborative projects.
+                </p>
+
+            </div>
+
+            <div class="about-skills">
+                <ul>
+                    <li>
+                        <img src="/assets/code-icon.png">
+                        <h3>Languages</h3>
+                        <p>HTML, CSS, JavaScript, Python, Java, C/C++/C#, SQL</p>
+                    </li>
+
+                    <li>
+                        <img src="/assets/school-icon.png">
+                        <h3>Education</h3>
+                        <p>BSc in Computer Science with Minor in User Experience Design, Wilfrid Laurier University </p>
+                    </li>
+
+                    <li>
+                        <img src="/assets/tools-icon.png">
+                        <h3>Tools</h3>
+                        <p>Figma, SQL Developer, Eclipse, Canva, Github, VSCode</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Footer -->
+         <footer class="footer">
+            <p>&copy; 2025 Tiwi Lanre-Adisa. All rights reserved.</p>
+            <p>Designed by Tiwi Lanre-Adisa</p>
+        </footer>
+
+        <script>
+            const hamburger = document.getElementById("hamburger");
+            const navbar = document.getElementById("navbar");
+            const navLinks = navbar.querySelectorAll("a");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("open");
+                navbar.classList.toggle("active");
+            });
+
+            // Close the menu when any link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                navbar.classList.remove("active");
+                });
+            });
+        </script>
     </body>
 </html>

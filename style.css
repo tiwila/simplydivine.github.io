@@ -26,21 +26,28 @@ body {
     display: flex;
     flex-direction: column;
     /* Adjust padding-top to ensure content starts below the fixed header */
-    padding-top: 5rem; /* Approximate height of header */
+    padding-top: 6rem; /* Approximate height of header */
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0;
+
 }
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    padding: 1rem 5%;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     background: var(--primary-color); /*deep purple:  #4A0E4E*/
     backdrop-filter: blur(10px);
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .logo {
@@ -80,7 +87,7 @@ span{
     display: flex;
     align-items: center;
     gap: 7em;
-    padding: 30px 12% 0;
+    padding: 30px 0 0;
     flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
     justify-content: center; /* Center content when wrapped */
 }
@@ -153,8 +160,8 @@ span{
     width: 450px;
     height: 500px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid transparent;
+    border-radius: 10%;
+    border: 1px solid transparent;
     background: var(--primary-color);
     padding: 5px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -201,31 +208,59 @@ span{
 /*About Section*/
 
 .about{
+    background-color: var(--background-color);
     display: flex;
-    padding: 12% 8%;
-    gap: 10em;
-    background: #0C1419;
+    padding: 10% 0;
+    gap: 3em;
     justify-content: center;
-    align-items: center; /* Center the content vertically and horizontally */
+    align-items: flex-start; /* Center the content vertically and horizontally */
     flex-wrap: wrap; /* Allows items to wrap for smaller screens */
-    text-align: center; /* Center text content in about section */
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;;
+}
+
+.about-photo{
+    flex: 0 0 30%; /* Allows the image to take its natural width */
+    max-width: 450px;
+    order: 2;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .about-photo img{
-    width: 450px;
-    height: 500px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    box-shadow: 0 0 25px var(--secondary-color),
-                 0 0 25px var(--primary-color);
-    border-radius: 50%;
-    max-width: 90%; /* Ensures image scales down */
-    height: auto; /* Maintains aspect ratio */
+    box-shadow: 0 0 25px var(--secondary-color);
+    border-radius: 10px;
+}
+
+.about-text{
+    flex: 1; /* Allows text to take available space */
+    max-width: 600px; /* Constrain text width for readability */
+    min-width: 280px;
+    order: 1; /* Ensure text appears before image on larger screens */
+    text-align: left;
+    padding: 0 10px; /* Add some horizontal padding for better readability */
+    margin-top: 20px; /* Add margin to separate from the top */
 }
 
 .about-text h2{
-    text-align: center; /* Center heading for better mobile view */
+    text-align: left; /* Center heading for better mobile view */
     font-size: 42px;
-    color: whitesmoke;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* Ensure heading is above other elements */
+}
+
+.about-text p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--tertiary-color);
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .about-text h3{
@@ -234,7 +269,27 @@ span{
     margin: 1em 0;
 }
 
-.about-text ul p{
+.about-skills{
+    flex: 1 1 100%;
+    max-width: 1000px;
+    order: 3; /* Ensure skills appear after text on larger screens */
+    text-align: left;
+    margin: 0 auto; /* Center the skills section */
+    padding: 0 20px; /* Add some horizontal padding for better readability */
+    flex-wrap: wrap;
+}
+
+.about-skills ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin-top: 30px;
+    list-style: none;
+    margin-bottom: 20px; /* Add space below the list */
+}  
+
+.about-skills ul p{
     font-size: 20px;
     line-height: 1.5;
     color: var(--tertiary-color);
@@ -242,64 +297,57 @@ span{
     margin: 1em 0;
 }
 
-.about-text ul{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px 20px;
-    margin: 0;
-    flex-wrap: wrap; /* Allow list items to wrap */
-}  
-
-.about-text ul img {
+.about-skills ul img {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
 }
 
-.about-text li{
-    padding: 10px 20px;
+.about-skills li{
+    padding: 20px;
     border-radius: 15px;
     background-color: whitesmoke;
-    width: 300px;
-    max-width: 100%; /* Ensures list item doesn't overflow */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Softer shadow */
+    width: calc(50% - 15px); /* Approx 3 items per row on large screens, accounting for gap */
+    min-width: 350px; /* Minimum width for each card */
+    text-align: left; /* Align text within list items */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align icon and text to start */
+    transition: all 0.3s ease;
 }
-.about-text li:hover{
-    box-shadow: var(--secondary-color) 0px 0px 20px;
-    color: var(--primary-color); /*deep purple:  #4A0E4E*/
-    transform: translateY(-5px);
+.about-skills li:hover{
+    box-shadow: var(--primary-color) 0px 2px 10px;
+    color: var(--tertiary-color); /*deep purple:  #4A0E4E*/
+    transform: translateY(-8px);
     transition: 0.3s ease;
 }
 
-.about-text p{
-    font-size: 20px;
-    margin: 2em 0 3em;
-    color: whitesmoke;
-}
-
 .about-text .me-highlight{
-    color: var(--secondary-color); 
+    color: var(--tertiary-color); 
     font-weight: 800;
 }
 
 .about-text .text-highlight{
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 /* services section */
 
 .services{
-    padding: 12% 8%;
+    padding: 12% 0;
     gap: 10em;
     background: var(--background-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
     justify-content: center;
     align-items: center; /* Center the content vertically and horizontally */
+    width: 100%;
 }
 
 .services h2{
     text-align: center;
-    font-size: 42px;
+    font-size: 40px;
     color: var(--primary-color); /*deep purple:  #4A0E4E*/
 }
 
@@ -321,7 +369,7 @@ span{
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 40px 20px;
+    padding: 40px 0;
     list-style: none;
     margin: 0;
     flex-wrap: wrap; /* Allow list items to wrap */
@@ -366,7 +414,8 @@ span{
 }
 .contact{
     background-color: var(--tertiary-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
-    padding: 12% 8%; /* Add padding for better spacing */
+    padding: 12% 0; /* Add padding for better spacing */
+    width: 100%;
 }
 
 /*contact section*/
@@ -402,7 +451,7 @@ span{
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3em;
-    padding: 0 15px; /* Add some horizontal padding to the form */
+    padding: 0; /* Add some horizontal padding to the form */
 }
 
 .contact form .input-box{
@@ -426,17 +475,18 @@ span{
 /* My Work Section */
 .work-section {
     flex-grow: 1; /* Allows this section to take available space */
-    padding: 3rem 1rem; /* Padding top/bottom and sides */
+    padding: 3rem 0; /* Padding top/bottom and sides */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--background-color);
+    width: 100%;
 }
 
 .work-heading {
     text-align: center;
     margin-bottom: 2.5rem; /* Space below heading */
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .work-heading h1 {
@@ -460,7 +510,7 @@ span{
     gap: 1.5rem; /* Space between blocks */
     max-width: 1000px; /* Max width of the grid container */
     width: 100%;
-    padding: 0 1rem; /* Inner padding for the grid */
+    padding: 0; /* Inner padding for the grid */
 }
 
 /* Work Item Blocks */
@@ -515,6 +565,13 @@ span{
     text-align: center;
     margin-top: auto; /* Push footer to the bottom */
     font-size: 0.9rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Center footer */
+    margin-right: calc(50% - 50vw);
 }
 .footer p:last-child {
     font-size: 0.75rem; /* Smaller font for "Designed by" */
@@ -523,10 +580,10 @@ span{
 
 /*---UX page---*/
 .ux-text h1{
-    font-size: 50px;
+    font-size: 40px;
     color: var(--primary-color); /*deep purple:  #4A0E4E*/
     text-align: center;
-    margin-top: 3em;
+    margin-top: 1em;
     margin-bottom: 2rem
 }
 
@@ -582,52 +639,18 @@ span{
     box-shadow: 0 1px 15px var(--primary-color);
 }
 
-.work-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--background-color);
-}
-.work-section h1 {
-    font-size: 3rem;
-    color: var(--primary-color); /*deep purple:  #4A0E4E*/
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease-in-out;
-}
-.work-section p {
-    font-size: 1.1rem;
-    color: var(--tertiary-color); /*dark grey: #0C1419*/
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* --- Media Queries --- */
 
 /* For screens smaller than 1200px (e.g., smaller desktops, large tablets) */
 @media (max-width: 1200px) {
     .header {
-        padding: 1rem 5%; /* Adjust padding for header */
+        padding: 1rem 3%; /* Adjust padding for header */
     }
 
     body {
-        padding-top: 5.5rem; /* Ensure enough space for header */
+        padding-top: 5rem; /* Ensure enough space for header */
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
     .logo {
@@ -640,18 +663,31 @@ span{
     }
 
     .hero {
-        margin-top: -5.5rem;
-        padding-top: calc(30px + 5.5rem);
+        margin-top: 0;
+        padding-top: 30px;
     }
 
     .about {
-        margin-top: -5.5rem;
-        padding-top: calc(12% + 5.5rem);
+        margin-top: 0;
+        padding-top: 10%;
+        gap: 3em;
     }
 
+    .about-photo{
+        flex: 0 0 40%;
+    }
+
+    .about-text{
+        flex: 1 1 50%;
+    }
+
+    .about-skills li{
+        width: calc(50% - 10px); /* Adjust for two items per row */
+        min-width: 320px; /* Ensure minimum width */
+    }
 
     .services {
-        padding: 8% 5%;
+        padding: 8% 0;
     }
 
     .work-heading h1 {
@@ -668,12 +704,25 @@ span{
     .work-text h2 {
         font-size: 1.4rem;
     }
+
+    .footer{
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
 }
 
 /* For screens smaller than 992px (e.g., tablets) */
 @media (max-width: 992px) {
+    body{
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 4.5rem;
+    }
+
     .header {
-        padding: 20px 3%; /* Further reduce padding */
+        padding: 20px 2%; /* Further reduce padding */
+        min-height: 4rem;
     }
 
     .navbar a {
@@ -684,7 +733,7 @@ span{
     .hero {
         flex-direction: column; /* Stack elements vertically */
         text-align: center; /* Center align text */
-        padding: 80px 5% 30px;
+        padding: 80px 30px;
         gap: 2em;
     }
 
@@ -700,48 +749,57 @@ span{
         font-size: 25px;
     }
 
-    .personal-photo-container {
-        order: -1; /* Move image above text on smaller screens */
-    }
-
-    .personal-photo {
-        width: 350px;
-        height: 400px;
-        max-width: 90%; /* Ensure image scales down */
-        height: auto;
-    }
-
     .about {
         flex-direction: column; /* Stack elements vertically */
-        padding: 5% 3%;
-        gap: 3em;
+        align-items: center; /* Center align content */
+        padding: 40px 0;
+        gap: 30px;
     }
 
-    .about-photo img {
+    .about-photo{
+        order: 1;
         width: 350px;
         height: 400px;
         max-width: 90%;
         height: auto;
     }
 
+    .about-text {
+        order: 2; /* Ensure text appears after image on smaller screens */
+        max-width: 90%; /* Allow text to take full width */
+        text-align: center; /* Center align text for better mobile view */
+        margin-bottom: 0;
+    }
+
+    .about-skills{
+        order: 3;
+        max-width: 90%; /* Constrain skills section width */
+        margin-top: 0;
+    }
+
     .about-text h2 {
         font-size: 36px;
+        text-align: center; /* Center heading for better mobile view */
+        margin-bottom: 20px;
     }
 
-    .about-text ul {
-        flex-direction: column; /* Stack skill items vertically */
+    .about-skills ul {
+        flex-direction: column; /* Stack skills section vertically */
+        justify-content: center;
         gap: 15px;
-        padding: 20px 10px;
+        padding: 20px 0;
     }
 
-    .about-text li {
+    .about-skills li {
         width: 100%; /* Allow list items to take full width */
+        max-width: 400px; /* Constrain width of each skill item */
+        margin: 0 auto; /* Center align skill items */
     }
 
     .services ul {
         flex-direction: column; /* Stack service items vertically */
         gap: 15px;
-        padding: 20px 10px;
+        padding: 20px 0;
     }
 
     .services li {
@@ -752,7 +810,7 @@ span{
         grid-template-columns: 1fr; /* Single column layout for tablets */
         gap: 1rem; /* Further reduced gap */
         max-width: 25rem; /* Constrain single column width */
-        padding: 0 1.5rem; /* Adjust padding for single column */
+        padding: 0; /* Adjust padding for single column */
     }
     .work-heading h1 {
         font-size: 2.5rem;
@@ -766,22 +824,31 @@ span{
     }
 
     .contact form {
-        padding: 0 10px;
+        padding: 0;
+    }
+
+    .footer{
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }
 }
 
 /* For screens smaller than 768px (e.g., most mobile devices) */
 @media (max-width: 768px) {
+
+    body{
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+        padding-top: 4rem; /* Adjust for smaller header */
+    }
     .header {
-        padding: 0.8rem 3%;
+        padding: 0.8rem 1.5%;
+        min-height: 3.5rem; /* Smaller header height */
     }
 
     .logo {
         font-size: 1.5rem;
-    }
-
-     body {
-        padding-top: 4rem; /* Adjust for smaller header */
     }
 
     .navbar {
@@ -821,7 +888,7 @@ span{
     }
 
     .hero {
-        padding: 60px 3% 20px;
+        padding: 60px 0 20px;
     }
 
     .intro-text h1 {
@@ -848,7 +915,7 @@ span{
     }
 
     .about {
-        padding: 5% 2%;
+        padding: 5% 0;
     }
 
     .about-photo img {
@@ -865,7 +932,7 @@ span{
     }
 
     .services {
-        padding: 5% 2%;
+        padding: 5% 0;
     }
 
     .services h2 {
@@ -881,7 +948,7 @@ span{
     }
 
     .work-section {
-        padding: 2rem 0.5rem;
+        padding: 2rem 0;
     }
     .work-heading h1 {
         font-size: 2.5rem;
@@ -907,13 +974,28 @@ span{
         font-size: 0.85rem;
     }
 
+    .footer {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
 
 }
 
 /* For screens smaller than 480px (e.g., smaller mobile devices) */
 @media (max-width: 480px) {
+
+    body{
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 3rem; /* Adjust for smaller header */
+    }
+        
+    
     .header {
-        padding: 0.5rem 2%;
+        padding: 0.5rem 1%;
+        min-height: 3rem; /* Smaller header height */
     }
 
     .logo {
@@ -924,12 +1006,8 @@ span{
         padding-top: 3rem;
     }
 
-    .navbar {
-        display: none; /* Hide navbar on very small screens, consider a hamburger menu */
-    }
-
     .hero {
-        padding: 40px 2% 10px;
+        padding: 40px 0 10px;
     }
 
     .intro-text h1 {
@@ -983,5 +1061,11 @@ span{
     }
     .work-text p {
         font-size: 0.8rem;
+    }
+
+    .footer {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }
 }
