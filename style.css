@@ -484,7 +484,21 @@ span{
     align-items: center;
     background-color: var(--background-color);
     width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
 }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .work-heading {
     text-align: center;
