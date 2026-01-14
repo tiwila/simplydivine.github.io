@@ -1,35 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TheraLink Case Study</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Me</title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
+  <!-- Global styles -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- TheraLink styles -->
+  <link rel="stylesheet" href="../theralink.css">
 
-    <body>
-        <!-- Navbar -->
-        <header class="header">
-            <a href="../#home" class="logo"><span class="logo-color">Simply</span>.Divine</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+</head>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<body>
 
-            <nav class="navbar" id="navbar">
-                <a href="../#home">Home</a>
-                <a href="../#about">About</a>
-                <a href="../pages/myWork.html">My Work</a>
-                <a href="../#contact">Contact</a>
-            </nav>
-        </header>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <a href="../#home" class="logo"><span>Simply</span>.Divine</a>
 
-        <!-- Thera section -->
-        <section class="thera">
-            <div class="thera-text">
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="../#home">Home</a>
+    <a href="../#about">About</a>
+    <a href="../pages/myWork.html">My Work</a>
+    <a href="../#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="case-hero">
+  <h1>TheraLink</h1>
+  <p class="tagline">
+    A teletherapy platform that simplifies mental health support by connecting users
+    with licensed therapists and providing integrated wellness tools.
+  </p>
+  <img src="../assets/theralink.png" alt="TheraLink mockup">
+</section>
+
+<!-- ================= META CARDS ================= -->
+<section class="case-section meta-row">
+  <div class="meta-card">
+    <span>Role</span>
+    <p>UX/UI Designer</p>
+  </div>
+  <div class="meta-card">
+    <span>Duration</span>
+    <p>8 weeks</p>
+  </div>
+  <div class="meta-card">
+    <span>Team</span>
+    <p>4 members</p>
+  </div>
+  <div class="meta-card">
+    <span>Tools</span>
+    <p>Figma, Miro, Maze</p>
+  </div>
+</section>
+
+<!-- ================= PROCESS STEPS ================= -->
+<section class="process-steps">
+  <a href="#empathize">Empathize</a>
+  <a href="#define">Define</a>
+  <a href="#ideate">Ideate</a>
+  <a href="#prototype">Prototype</a>
+  <a href="#test">Test</a>
+  <a href="#results">Results & Impact</a>
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="case-section">
+  <div class="case-content">
+    <h2>Overview</h2>
+    <p>
+      TheraLink is a digital platform for teletherapy, offering a one-stop solution
+      for individuals and families seeking mental health support. It connects users
+      with licensed therapists and provides tools for managing their well-being.
+    </p>
+  </div>
+</section>
+
+<!-- ================= EMPATHIZE ================= -->
+<section class="case-section" id="empathize">
+  <div class="case-content">
+    <h2>Empathize</h2>
+
+    <h3>Research Goals</h3>
+    <ul>
+      <li>Identify pain points in finding therapists</li>
+      <li>Understand privacy, cost, and accessibility concerns</li>
+      <li>Explore what makes users feel comfortable vs intimidated</li>
+    </ul>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>Research Summary</h4>
+      <ul>
+        <li>Users sought therapy mainly for anxiety and mental well-being</li>
+        <li>Many felt overwhelmed or hopeless</li>
+        <li>Barriers included cost, trust, and therapist fit</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>User Pain Points</h4>
+      <ul>
+        <li>High cost / lack of coverage</li>
+        <li>Difficulty matching with therapists</li>
+        <li>Privacy concerns</li>
+        <li>Low emotional connection online</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="case-content">
+    <h3>User Personas</h3>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <img src="../assets/thera-persona1.jpg" alt="Alexia Thorn persona">
+      <h4>Alexia Thorn, 20</h4>
+      <em>“Online therapy feels safer and less intimidating for me.”</em>
+      <ul class="persona-points">
+        <li>Struggles with social anxiety</li>
+        <li>Prefers discreet, affordable online care</li>
+        <li>Wants to build confidence and manage academic stress</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <img src="../assets/thera-persona2.jpg" alt="Mark Johnson persona">
+      <h4>Mark Johnson, 33</h4>
+      <em>“I feel constant pressure trying to keep up in tech.”</em>
+      <ul class="persona-points">
+        <li>Stressed software engineering lead</li>
+        <li>Needs flexible, private mental health support</li>
+        <li>Balances work demands with personal life</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEFINE ================= -->
+<section class="case-section" id="define">
+  <div class="case-content">
+    <h2>Define</h2>
+
+    <h3>Key Insights</h3>
+
+    <div class="insight">
+      <strong>Insight 1</strong>
+      <p>Users feel overwhelmed by impersonal therapy platforms</p>
+    </div>
+
+    <div class="insight">
+      <strong>Insight 2</strong>
+      <p>Trust is built through transparency and credentials</p>
+    </div>
+
+    <div class="insight">
+      <strong>Insight 3</strong>
+      <p>Users want control over their mental health journey</p>
+    </div>
+
+    <blockquote>
+      How might we create an affordable, trustworthy teletherapy platform
+      that feels emotionally supportive?
+    </blockquote>
+  </div>
+</section>
+
+<!-- ================= IDEATE ================= -->
+<section class="case-section" id="ideate">
+  <div class="case-content">
+    <h2>Ideate</h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>Smart Matching Quiz</h4>
+      <p>Conversational onboarding to match users with the right therapist.</p>
+    </div>
+    <div class="card">
+      <h4>Wellness Dashboard</h4>
+      <p>Mood tracking, journaling, and goal setting.</p>
+    </div>
+    <div class="card">
+      <h4>Calming Visual Design</h4>
+      <p>Soft teal palette and gentle, reassuring UI.</p>
+    </div>
+  </div>
+
+  <div class="case-content ideate-wireframes">
+    <h3>Low-Fidelity Wireframes</h3>
+    <p>
+      Early wireframes explored onboarding, therapist matching,
+      dashboards, and booking before moving to high-fidelity designs.
+    </p>
+
+    <div class="wireframe-container">
+      <img
+        src="../assets/initial + Onboarding (1).png"
+        alt="TheraLink low-fidelity wireframes"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROTOTYPE ================= -->
+<section class="case-section" id="prototype">
+  <div class="case-content">
+    <h2>Prototype</h2>
+    <div class="prototype-block">
+      <h3>Low-Fidelity Prototype</h3>
+      <p>
+      Low-fidelity prototypes were created to test the full user flow,
+      including onboarding, matching, dashboards, and booking.
+      </p>
+      <div class="prototype-image">
+        <img
+          src="../assets/Thera-Lofi Wireframe.png"
+          alt="TheraLink low-fidelity prototype"
+        />
+      </div>
+    </div>
+
+    <div class="prototype-block">
+      <h3>High-Fidelity Prototype</h3>
+      <p>
+      High-fidelity prototypes refined the visual design and interactions
+      for a more realistic user experience.
+      </p>
+      <div class="prototype-image">
+        <img
+          src="../assets/Thera-Lofi Wireframe.png"
+          alt="TheraLink low-fidelity prototype"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="image-row">
+    <img src="../assets/theralink/initial-exploration.png" alt="Landing exploration">
+    <img src="../assets/theralink/question-1.png" alt="Onboarding question">
+    <img src="../assets/theralink/question-final.png" alt="Final onboarding screen">
+  </div>
+</section>
+
+<!-- ================= TEST ================= -->
+<section class="case-section" id="test">
+  <div class="case-content">
+    <h2>Testing</h2>
+    <ul class="checklist">
+      <li>Smart quiz was well received</li>
+      <li>Video introductions increased confidence</li>
+      <li>Booking flow required refinement</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="case-section results" id="results">
+  <div class="stat">
+    <h3>87%</h3>
+    <p>Task Completion</p>
+  </div>
+  <div class="stat">
+    <h3>4.6 / 5</h3>
+    <p>User Satisfaction</p>
+  </div>
+  <div class="stat">
+    <h3>40%</h3>
+    <p>Faster Onboarding</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2025 Simply.Divine</p>
+  <p>Designed & built by Tiwi</p>
+</footer>
+
+</body>
+</html>
