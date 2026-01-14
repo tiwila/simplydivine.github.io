@@ -7,8 +7,6 @@
 
   <!-- Global styles -->
   <link rel="stylesheet" href="../style.css">
-  <!-- TheraLink styles -->
-  <link rel="stylesheet" href="../theralink.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +175,25 @@
   <p>© 2025 Simply.Divine</p>
   <p>Designed & built by Tiwi</p>
 </footer>
+
+<script>
+            const hamburger = document.getElementById("hamburger");
+            const navbar = document.getElementById("navbar");
+            const navLinks = navbar.querySelectorAll("a");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("open");
+                navbar.classList.toggle("active");
+            });
+
+            // Close the menu when any link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                navbar.classList.remove("active");
+                });
+            });
+        </script>
 
 </body>
 </html>
