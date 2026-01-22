@@ -554,116 +554,6 @@ span{
     resize: none;
 }
 
-/* My Work Section */
-.work-section {
-    flex-grow: 1; /* Allows this section to take available space */
-    padding: 3rem 0; /* Padding top/bottom and sides */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--background-color);
-    width: 100%;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-.work-heading {
-    text-align: center;
-    margin-bottom: 2.5rem; /* Space below heading */
-    padding: 0;
-}
-
-.work-heading h1 {
-    font-size: 3.5rem; /* Prominent heading */
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-}
-
-.work-heading p {
-    font-size: 1.15rem;
-    color: var(--tertiary-color);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.work-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for work items */
-    gap: 1.5rem; /* Space between blocks */
-    max-width: 1000px; /* Max width of the grid container */
-    width: 100%;
-    padding: 0; /* Inner padding for the grid */
-}
-
-/* Work Item Blocks */
-.work-item {
-    background-color: #ffffff;
-    /* Match Services border-radius (20px approx 1.25rem) */
-    border-radius: 1.25rem; 
-    padding: 2rem; /* Increased padding to match the "breathing room" of services */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: var(--tertiary-color);
-    
-    /* Match the modern, softer shadow from Services */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
-    
-    /* Match the subtle border logic */
-    border: 1px solid rgba(74, 14, 78, 0.1); 
-    
-    transition: all 0.3s ease;
-}
-
-.work-item:hover {
-    /* Match the Service hover lift and color change */
-    transform: translateY(-10px); 
-    box-shadow: 0 15px 35px rgba(74, 14, 78, 0.15);
-    border-color: var(--primary-color);
-    
-    /* Ensure background-color matches your Services hover style if intended */
-    background-color: white; 
-}
-
-.work-icon {
-    width: 3.5rem; /* Icon size */
-    height: 3.5rem;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    border-radius: 50%; /* Circular icon */
-    background-color: var(--primary-color); /* Primary color background for icon circle */
-    padding: 0.5rem; /* Padding inside icon circle */
-    border: 2px solid var(--secondary-color); /* Border around icon */
-}
-
-.work-text h2 {
-    font-size: 1.6rem; /* Title size */
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color); /* Title color */
-}
-
-.work-text p {
-    font-size: 0.95rem; /* Description size */
-    line-height: 1.5;
-    color: var(--tertiary-color); /* Description color */
-}
-
 .footer {
     background: var(--primary-color);
     color: whitesmoke;
@@ -992,30 +882,6 @@ span{
     background-color: var(--tertiary-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* ---------- FINDINGS LIST ---------- */
-.findings-list {
-    background: var(--secondary-color);
-    padding: 2rem 2rem 2rem 3rem;
-    border-radius: 16px;
-    border-left: 5px solid var(--primary-color);
-    list-style: none;
-}
-
-.findings-list li {
-    margin-bottom: 1rem;
-    position: relative;
-    line-height: 1.6;
-}
-
-.findings-list li::before {
-    content: "•";
-    color: var(--primary-color);
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
 }
 
 /* --- Moro App Case Study Layout --- */
@@ -1483,8 +1349,6 @@ span{
         max-width: 350px;
         margin: 0 auto;
     }
-
-    @media (max-width: 768px) {
     /* 1. Reset Case Study Containers */
     .case-hero,
     .case-section {
@@ -1526,9 +1390,7 @@ span{
     .case-hero h1 {
         font-size: 2rem !important;
     }
-}
-
-
+    
     .footer {
         width: 100vw;
         margin-left: calc(50% - 50vw);
