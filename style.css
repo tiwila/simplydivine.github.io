@@ -1449,6 +1449,51 @@ span{
         margin: 0 auto;
     }
 
+    @media (max-width: 768px) {
+    /* 1. Reset Case Study Containers */
+    .case-hero,
+    .case-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        overflow-x: hidden;
+    }
+
+    /* 2. Fix Meta/Card Grids */
+    .meta-row, 
+    .card-grid {
+        grid-template-columns: 1fr !important; /* Forces single column */
+        width: 100% !important;
+        gap: 1.5rem;
+    }
+
+    /* 3. Force All TheraLink Assets to Fit */
+    .full-width-asset img,
+    .image-row img,
+    .card img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 4. Fix Flexbox Image Rows */
+    .image-row {
+        flex-direction: column !important; /* Stack side-by-side sketches */
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* 5. Adjust the Hero text size for TheraLink */
+    .case-hero h1 {
+        font-size: 2rem !important;
+    }
+}
+
+
     .footer {
         width: 100vw;
         margin-left: calc(50% - 50vw);
