@@ -306,7 +306,7 @@ span{
 
 .about-skills li{
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: whitesmoke;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Softer shadow */
     width: calc(50% - 15px); /* Approx 3 items per row on large screens, accounting for gap */
@@ -316,11 +316,14 @@ span{
     flex-direction: column;
     align-items: flex-start; /* Align icon and text to start */
     transition: all 0.3s ease;
+    border: 1px solid rgba(74, 14, 78, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    transition: all 0.3s ease;
 }
 .about-skills li:hover{
-    box-shadow: var(--primary-color) 0px 2px 10px;
-    color: var(--tertiary-color); /*deep purple:  #4A0E4E*/
-    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(74, 14, 78, 0.15);
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
     transition: 0.3s ease;
 }
 
@@ -388,84 +391,71 @@ span{
     color: var(--tertiary-color);
 }
 
-/* services section */
+/* --- Services Section --- */
 
-.services{
-    padding: 12% 0;
-    gap: 10em;
-    background: var(--background-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
-    justify-content: center;
-    align-items: center; /* Center the content vertically and horizontally */
+.services {
+    padding: 80px 0; /* Reduced from 12% for better control */
+    background: var(--background-color);
     width: 100%;
 }
 
-.services h2{
+.services h2 {
     text-align: center;
     font-size: 40px;
-    color: var(--primary-color); /*deep purple:  #4A0E4E*/
+    color: var(--primary-color);
+    margin-bottom: 20px; /* Space between title and cards */
 }
 
-.services h3{
-    font-size: 25px;
-    color: var(--tertiary-color);
-    margin: 1em 0;
-}
-
-.services ul p{
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: black;
-    margin: 1em 0;
-}
-
-.services ul{
+.services ul {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 40px 0;
+    align-items: stretch; /* Ensures cards are same height */
+    gap: 40px; /* Controlled space between cards */
+    padding: 40px 2%;
     list-style: none;
-    margin: 0;
-    flex-wrap: wrap; /* Allow list items to wrap */
-}  
+    margin: 0 auto;
+    max-width: 1100px; /* Keeps cards from spreading too far on wide screens */
+    flex-wrap: wrap;
+}
+
+.services li {
+    padding: 40px 30px; /* More internal breathing room */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Modern, softer shadow */
+    border: 1px solid rgba(74, 14, 78, 0.1); /* Subtle border instead of harsh purple */
+    border-radius: 20px;
+    background-color: white;
+    width: 350px; /* Slightly wider cards for better text flow */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.services li:hover {
+    box-shadow: 0 15px 35px rgba(74, 14, 78, 0.15);
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
 
 .services ul img {
-    display: block;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
 }
 
-.services li{
-    padding: 10px 20px;
-    box-shadow: 5px 5px 10px grey;
-    border: 1px solid var(--primary-color); 
-    margin: 20px auto;
-    border-radius: 15px;
-    background-color: white;
-    width: 300px;
-    max-width: 100%; /* Ensures list item doesn't overflow */
-}
-.services li:hover{
-    box-shadow: var(--secondary-color) 0px 0px 10px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color); /*deep purple:  #4A0E4E*/
-    transform: translateY(-5px);
-    transition: 0.3s ease;
+.services h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin: 15px 0 10px 0;
 }
 
-.services button{
-    padding: 10px 20px;
-    color: whitesmoke;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    letter-spacing: 1px;
-    font-weight: 500;
+.services ul p {
     font-size: 15px;
-    transition: 0.3s ease;
-    cursor: pointer;
-    margin: 0px auto;
-    display: block;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #444; /* Slightly softer than pure black */
+    margin: 0;
 }
+
 .contact{
     background-color: var(--tertiary-color); /*MAIN BACKGROUND COLOR - light grey: #EBEFF2*/
     padding: 12% 0; /* Add padding for better spacing */
@@ -586,23 +576,33 @@ span{
 
 /* Work Item Blocks */
 .work-item {
-    background-color: #ffffff; /* White background for items */
-    border-radius: 1rem; /* Rounded corners */
-    padding: 1.5rem; /* Inner padding */
+    background-color: #ffffff;
+    /* Match Services border-radius (20px approx 1.25rem) */
+    border-radius: 1.25rem; 
+    padding: 2rem; /* Increased padding to match the "breathing room" of services */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    color: var(--tertiary-color); /* Default text color */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    border: 1px solid var(--secondary-color); /* Subtle border */
+    color: var(--tertiary-color);
+    
+    /* Match the modern, softer shadow from Services */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    
+    /* Match the subtle border logic */
+    border: 1px solid rgba(74, 14, 78, 0.1); 
+    
+    transition: all 0.3s ease;
 }
 
 .work-item:hover {
-    transform: translateY(-0.5rem); /* Lift effect on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-    background-color: var(--hover-color); /* Hover background color */
+    /* Match the Service hover lift and color change */
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(74, 14, 78, 0.15);
+    border-color: var(--primary-color);
+    
+    /* Ensure background-color matches your Services hover style if intended */
+    background-color: white; 
 }
 
 .work-icon {
@@ -676,27 +676,30 @@ span{
 
 .ux-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     list-style: none;
     padding: 1rem 2rem; /* Add padding to the list */
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    align-items: stretch; /* Ensure all items stretch to the same height */
 }
-.ux-list-item{
+.ux-list-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color: #fff;
-    border: 1px solid var(--secondary-color);
-    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 1px 4px var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
-    min-height: 400px; /* Ensures all items have a minimum height */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 
+    /* 1. MATCHED BORDER: Subtle purple tint */
+    border: 1px solid rgba(74, 14, 78, 0.1); 
+
+    /* 2. MATCHED RADIUS: 20px (standardizing from 16px) */
+    border-radius: 20px; 
+
+    /* 3. MATCHED SHADOW: Soft, modern depth instead of the heavy purple shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
 }
 
 .ux-list-item img{
@@ -705,9 +708,15 @@ span{
     object-fit: cover;
     display: block;
 }
-.ux-list-item:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 1px 15px var(--primary-color);
+.ux-list-item:hover {
+    /* 4. MATCHED HOVER LIFT: Consistent 10px rise */
+    transform: translateY(-10px); 
+
+    /* 5. MATCHED HOVER SHADOW: Deeper glow on hover */
+    box-shadow: 0 15px 35px rgba(74, 14, 78, 0.15);
+
+    /* 6. MATCHED HOVER BORDER: Deep purple becomes solid on hover */
+    border-color: var(--primary-color);
 }
 
 /* Coming Soon Section */
@@ -1164,8 +1173,6 @@ span{
 .live-btn:hover .btn-icon {
     transform: translate(3px, -3px); /* Makes the arrow pop out slightly */
 }
-
-
 
 
 /* --- Media Queries --- */
