@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Evolution | Simply Divine</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="../#home" class="logo"><span class="logo-color">Simply</span>.Divine</a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="../#home">Home</a>
+            <a href="about.html">About</a>
+            <a href="myWork.html">My Work</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="case-study-container">
+        
+        <section class="project-hero">
+            <span class="category-tag">Internship Case Study</span>
+            <h1>The Evolution of Moro App</h1>
+            <p class="subtitle">A three-stage journey bridging the gap between design freedom and technical performance.</p>
+            
+            <div class="tech-stack-list">
+                <span>Figma</span>
+                <span>Canva</span>
+                <span>Lovable</span>
+                <span>Google Analytics</span>
+            </div>
+        </section>
+
+        <section class="evolution-steps">
+            
+            <article class="evolution-phase">
+                <div class="phase-content">
+                    <h2>Phase 01: Strategic UX Redesign (Figma)</h2>
+                    <p>
+                        The goal wasn't just a new look, but a <span class="text-highlight">better experience</span>. I performed a heuristic evaluation of the legacy site to identify what worked.
+                    </p>
+                    <p>
+                        By maintaining the familiar structural layout that existing users relied on, I was able to focus on 
+                        <span class="text-highlight">UX best practices</span>: improving information architecture, optimizing button accessibility, and creating a more intuitive visual hierarchy.
+                    </p>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <span class="comparison-label">Before</span>
+                            <img src="../assets/morobefore.png" alt="Legacy Website Layout">
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-label">After</span>
+                            <img src="../assets/morofigma.png" alt="Redesigned Website Layout">
+                        </div>
+                    </div>
+                    <div class="pivot-note">
+                        <strong>The Challenge:</strong> The initial handoff revealed that the client needed a way for their marketing team to edit seasonal content without touching a single line of code.
+                    </div>
+                </div>
+            </article>
+
+            <article class="evolution-phase">
+                <div class="phase-content">
+                    <h2>Phase 02: Handoff & Accessibility (Canva)</h2>
+                    <p>
+                        To prioritize the user experience of the internal team, I rebuilt the site using <strong>Canva’s website feature</strong>. This empowered non-technical staff to make real-time updates to banners and text.
+                    </p>
+                    <div class="pivot-note">
+                        <strong>The Roadblock:</strong> As the internship progressed, we realized the limitations: Canva didn't allow for custom SEO meta-tags or the granular Google Analytics tracking required for our recruitment KPIs.
+                    </div>
+                </div>
+                <div class="phase-media">
+                    <img src="../assets/morocanva.png" alt="Canva Website Builder">
+                </div>
+            </article>
+
+            <article class="evolution-phase">
+                <div class="phase-content">
+                    <h2>Phase 03: The Code-Based Pivot (Lovable)</h2>
+                    <p>
+                        Refusing to compromise on performance, I used <strong>Lovable</strong> to migrate the design into a production-ready environment. This allowed me to export clean React and Tailwind CSS.
+                    </p>
+                    <p>
+                        By moving to a code-based solution, I successfully integrated <strong>Google Tag Manager</strong> and optimized the site's SEO, ensuring the beautiful design was also a functional business tool.
+                    </p>
+                    <div class="live-site-container">
+                        <a href="https://www.moroapp.ca/" target="_blank" class="live-btn">
+                            Visit Live Site 
+                            <span class="btn-icon">↗</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="phase-media">
+                    <img src="../assets/morofinal.png" alt="Moro App Final Design">
+                </div>
+            </article>
+
+        </section>
+
+        <section class="project-conclusion">
+            <h3>Final Takeaway</h3>
+            <p>
+                This project was a lesson in adaptability. As a CS student with a UX minor, I learned that the best tool isn't always the one with the most features, but the one that solves the user's ultimate goal—in this case, balancing ease of use with data-driven performance.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Tiwi Lanre-Adisa. All rights reserved.</p>
+    </footer>
+
+    <script>
+            const hamburger = document.getElementById("hamburger");
+            const navbar = document.getElementById("navbar");
+            const navLinks = navbar.querySelectorAll("a");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("open");
+                navbar.classList.toggle("active");
+            });
+
+            // Close the menu when any link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                navbar.classList.remove("active");
+                });
+            });
+        </script>
+
+
+</body>
+</html>
