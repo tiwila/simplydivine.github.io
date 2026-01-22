@@ -391,6 +391,41 @@ span{
     color: var(--tertiary-color);
 }
 
+.color-fun-fact {
+    margin: 40px auto;
+    padding: 20px 30px;
+    max-width: 700px;
+    background-color: white; /* Clean white card */
+    border-radius: 15px;
+    border-left: 5px solid var(--primary-color); /* A nice accent bar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.color-fun-fact p {
+    font-size: 1.1rem;
+    color: var(--tertiary-color);
+    margin: 0;
+}
+
+.color-fun-fact span {
+    color: var(--primary-color);
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+/* A simple, cheeky hover effect */
+.color-fun-fact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74, 14, 78, 0.1);
+}
+
+.color-fun-fact:hover span {
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
 /* --- Services Section --- */
 
 .services {
