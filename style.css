@@ -706,6 +706,14 @@ span{
    ========================================================= */
 
 /* ---------- GLOBAL WIDTH CONTROL ---------- */
+.case-study-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+
 .case-hero,
 .case-section {
   max-width: 900px;
@@ -1431,6 +1439,36 @@ span{
 
     .case-section {
         margin-bottom: 7rem;
+    }
+
+    .case-study-container {
+        padding: 60px 16px;
+    }
+
+    .evolution-phase {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 80px;
+    }
+
+    /* Remove alternating layout on mobile */
+    .evolution-phase:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .phase-media,
+    .phase-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .phase-media img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .phase-content h2 {
+        font-size: 1.6rem;
     }
 
     .footer {
